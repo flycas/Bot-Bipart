@@ -1,0 +1,14 @@
+--Tabla clientes
+CREATE TABLE clients(
+    cuit VARCHAR(255) NOT NULL PRIMARY KEY,
+    cliente VARCHAR(255) NOT NULL,
+    vep VARCHAR(255) NOT NULL,
+    mensaje VARCHAR(255) NOT NULL,
+    recordatorio VARCHAR(255) NOT NULL,
+    contacto VARCHAR(255) NOT NULL,
+    alternativo VARCHAR(255) NOT NULL,
+    grupo VARCHAR(255) NOT NULL,
+    estado VARCHAR(255) NOT NULL,
+    error VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

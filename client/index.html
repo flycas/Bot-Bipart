@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/client/dist/output.css" rel="stylesheet">
+    <title>Bi Part</title>
+</head>
+    <body class="text-white  bg-bp-primary" >
+        <div class="w-screen flex flex-row gap-5">
+            <img src="./assets/Logo.png" alt="Bi Part Image" class="object-scale-down h-32 w-32 mx-5"/>
+            <h1 class=" w-screen font-sans text-4xl text-center m-10">Bi Part Estudio Contable</h1>
+        </div>
+        <main class=" w-screen">
+            <section class="flex flex-row gap-5">
+                <div class="mx-10">
+                    <div class=" w-1/2 flex flex-row my-10 ">
+                        <form id="excelForm" enctype="multipart/form-data" class="">
+                            <legend class="text-left m-2">Carga de Archivos:</legend>
+                            <input type="file" name="excelFile" accept="xlsx" class="border-solid border border-neutral-50 rounded mx-2"></input>
+                            <button class="w-44 rounded-sm shadow-lg p-2 mx-2  bg-bp-secondary hover:bg-teal-600" type="submit">Cargar Base de Datos</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form id="formUpdate" enctype="multipart/form-data">
+                            <legend class="text-left m-2">Actualización de Archivos:</legend>
+                            <input type="file" name="updateFile" accept="xlsx" class="border-solid border border-neutral-50 rounded mx-2"></input>
+                            <button class="w-48 rounded-sm shadow-lg p-2 mx-2  bg-bp-secondary hover:bg-teal-600"type="submit">Actualizar Base de Datos</button>
+                        </form>
+                    </div>
+                    <div class="w-1/4 justify-start my-3">
+                        <legend class="text-left m-2">Respuesta: </legend>
+                        <div id="result" class="m-2 text-sm text-left"></div>
+                    </div>
+                </div>
+                <div class="w-1/2">
+                    <legend class="text-left m-2">Mensaje:</legend>
+                    <textarea rows="4" class=" mx-2 w-1/4"></textarea>
+                    <button>Enviar Mensaje</button>
+                    <button> Enviar VEP</button>
+                </div>
+            </section>
+        </main>
+        <script src="form.js"></script>
+    </body>
+</html>
