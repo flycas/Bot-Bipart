@@ -14,7 +14,7 @@
         <main class=" w-screen">
             <section class="flex flex-row gap-10">
                 <div class="w-1/2 mx-10">
-                    <div class="flex flex-row my-10 ">
+                    <div class="flex flex-row my-10 "> <!-- Formulario Carga de archivos para base de datos -->
                         <form id="excelForm" enctype="multipart/form-data" class="">
                             <legend class="text-left m-2">Carga de Archivos:</legend>
                             <input type="file" name="excelFile" accept="xlsx" class="border-solid border border-neutral-50 rounded mx-2"></input>
@@ -22,27 +22,31 @@
                         </form>
                     </div>
                     <div>
-                        <form id="formUpdate" enctype="multipart/form-data">
+                        <form id="formUpdate" enctype="multipart/form-data"> <!-- Formulario Actualización de archivos para base de datos -->
                         <legend class="text-left m-2">Actualización de Archivos:</legend>
                             <input type="file" name="updateFile" accept="xlsx" class="border-solid border border-neutral-50 rounded mx-2"></input>
                             <button class="w-48 rounded-sm shadow-lg p-2 mx-2  bg-bp-secondary hover:bg-teal-600"type="submit">Actualizar Base de Datos</button>
                         </form>
                     </div>
-                    <div class="w-1/4 justify-start my-3">
+                    <div class="w-1/4 justify-start my-3"> <!-- Respuesta de la operación de Carga y Actualizacón de BD -->
                         <legend class="text-left m-2">Respuesta: </legend>
                         <div id="result" class="m-2 text-sm text-left"></div>
                     </div>
                 </div>
-                <div class="w-1/2 my-10 flex flex-col justify-center">
-                    <legend class="text-left m-2">Mensaje a Enviar:</legend>
-                    <textarea rows="4" class=" m-2 w-1/4"></textarea>
-                    <div class="flex flex-row gap-1">
-                        <button class="w-24 rounded-sm shadow-lg p-1 mx-1  bg-bp-secondary hover:bg-teal-600"type="submit">Enviar VEP</button>
-                        <button class="w-32 rounded-sm shadow-lg p-1 mx-1  bg-bp-secondary hover:bg-teal-600"type="submit">Enviar Mensaje</button>
+                <div class="w-1/2 my-10 flex flex-col justify-center"> <!-- Formulario para envío de Msj y Recordatorios -->
+                    <form id="textForm">
+                        <legend class="text-left m-2">Mensaje a Enviar:</legend>
+                        <textarea id="txtArea" name="msgArea" rows="5"  class="w-1/2"></textarea>
+                    </form>
+                    <div class="flex flex-row gap-1 items-center">
+                        <button class="w-28 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar Mensaje</button>
+                        <button class="w-28 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar VEP</button>
+                        <button class="w-28 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar Recordatorio</button>
                     </div>
                 </div>
             </section>
         </main>
         <script src="form.js"></script>
+        <script src="msg.js"></script>
     </body>
 </html>
