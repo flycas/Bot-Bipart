@@ -39,7 +39,7 @@ const readFile = async (req, res) => {
   }
 };
 
-const updateFile = async (req, res) => {
+const updateFile = (req, res) => {
   if (!req.file) {
     return res.status(400).send("No se ha cargado ningún archivo");
   }
@@ -51,7 +51,7 @@ const updateFile = async (req, res) => {
     const data = xlsx.utils.sheet_to_json(sheet);
 
     for (const row of data) {
-      await pool.query("UPDATE clients SET ? WHERE cuit = ?", [row, row.CUIT]);
+      pool.query("UPDATE clients SET ? WHERE cuit = ?", [row, row.CUIT]);
     }
 
     res.json("Datos actualizados correctamente");

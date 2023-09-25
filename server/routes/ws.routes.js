@@ -1,13 +1,16 @@
-// const { Router } = require("express");
-// const {
-//   envioMensaje,
-//   envioMsjMedia,
-// } = require("../controllers/ws.controllers.js");
+const { Router } = require("express");
+const {
+  envioMensaje,
+  envioMsjMedia,
+  envioRecordatorio,
+} = require("../controllers/ws.controllers.js");
 
-// const router = Router();
+const router = Router();
 
-// router.post("/mensaje", envioMensaje);
+router.post("/mensaje", envioMensaje);
 
-// router.post("/msj-media", envioMsjMedia);
+router.post("/recordatorio", envioRecordatorio);
 
-// module.exports = router;
+router.post("/msj-media", envioMsjMedia);
+
+module.exports = router;
