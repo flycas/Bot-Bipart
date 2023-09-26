@@ -1,10 +1,11 @@
 const { createPool } = require("mysql2/promise");
+const { DB_HOST, DB_PORT, DB_USER, DB_NAME } = require("./config.js");
 
 const pool = createPool({
-  host: "127.0.0.1",
-  port: 3306,
-  user: "root",
-  database: "clientes_db",
+  host: DB_HOST,
+  port: DB_PORT,
+  user: DB_USER,
+  database: DB_NAME,
 });
 
 module.exports = pool;
