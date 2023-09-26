@@ -34,19 +34,22 @@
                     </div>
                 </div>
                 <div class="w-1/2 my-10 flex flex-col justify-center"> <!-- Formulario para envío de Msj y Recordatorios -->
-                    <form id="textForm">
+                    <form id="textForm" enctype="multipart/form-data">
                         <legend class="text-left m-2">Mensaje a Enviar:</legend>
-                        <textarea id="txtArea" name="msgArea" rows="5"  class="w-1/2"></textarea>
+                        <textarea id="txtArea" name="message" form="textForm" rows="4" cols="65" placeholder="Mensaje a enviar" class="text-black"></textarea>
+                    <div class="flex flex-row gap-1.5 items-center">
+                        <button id="sendMsg" class="w-40 h-8 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar Mensaje</button>
+                        <button id="sendVep" class="w-40 h-8 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="button">Enviar VEP</button>
+                        <button id="sendRec" class="w-40 h-8 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar Recordatorio</button>
+                    </div>
                     </form>
-                    <div class="flex flex-row gap-1 items-center">
-                        <button class="w-28 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar Mensaje</button>
-                        <button class="w-28 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar VEP</button>
-                        <button class="w-28 rounded shadow-lg p-1  bg-bp-secondary hover:bg-teal-600" type="submit">Enviar Recordatorio</button>
+                    <div class="w-1/4 justify-start my-3"> <!-- Respuesta de la operación de Envío de Mensajes -->
+                        <legend class="text-left m-2">Estado del Envío: </legend>
+                        <div id="MsgResponse" class="m-2 text-sm text-left"></div>
                     </div>
                 </div>
             </section>
         </main>
         <script src="form.js"></script>
-        <script src="msg.js"></script>
     </body>
 </html>

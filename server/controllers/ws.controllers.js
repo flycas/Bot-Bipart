@@ -10,14 +10,16 @@ const envioMensaje = async (req, resp) => {
   try {
     const message = req.body.message;
     let msjEnviado = {};
-    [resultado] = await pool.query("SELECT contacto FROM clients WHERE mensaje = 'SI'")
-      resultado.forEach(async (fila) => {
-        let { contacto } = fila;
-        msjEnviado = await cliente.sendMessage(`${contacto}@c.us`, message);
-      });
-    
+    [resultado] = await pool.query(
+      "SELECT contacto FROM clients WHERE mensaje = 'SI'"
+    );
+    resultado.forEach(async (fila) => {
+      let { contacto } = fila;
+      msjEnviado = await cliente.sendMessage(`${contacto}@c.us`, message);
+    });
+
     console.log(msjEnviado);
-    resp.send("El mensaje se envió correctamente");
+    resp.json("El mensaje se envió correctamente");
   } catch (error) {
     console.error(error);
     resp.send(error);
@@ -47,7 +49,7 @@ const envioMsjMedia = async (req, resp) => {
         console.log(msjEnviado._data.to.user);
       });
     });
-    resp.send("Mensaje enviado Correctamente");
+    resp.json("Mensaje enviado Correctamente");
   } catch (error) {
     console.error(error);
     resp.send(error);
@@ -58,14 +60,16 @@ const envioRecordatorio = async (req, resp) => {
   try {
     const message = req.body.message;
     let msjEnviado = {};
-    [resultado] = await pool.query("SELECT contacto FROM clients WHERE recordatorio = 'SI'")
-      resultado.forEach(async (fila) => {
-        let { contacto } = fila;
-        msjEnviado = await cliente.sendMessage(`${contacto}@c.us`, message);
-      });
-    
+    [resultado] = await pool.query(
+      "SELECT contacto FROM clients WHERE recordatorio = 'SI'"
+    );
+    resultado.forEach(async (fila) => {
+      let { contacto } = fila;
+      msjEnviado = await cliente.sendMessage(`${contacto}@c.us`, message);
+    });
+
     console.log(msjEnviado);
-    resp.send("El mensaje se envió correctamente");
+    resp.json("El mensaje se envió correctamente");
   } catch (error) {
     console.error(error);
     resp.send(error);
