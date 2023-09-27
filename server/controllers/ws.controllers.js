@@ -39,8 +39,8 @@ const envioMsjMedia = async (req, resp) => {
       file = path.join(folder, file);
       media = MessageMedia.fromFilePath(`${file}`);
       [number] = await pool.query(
-        "SELECT contacto FROM clients WHERE cuit=?",
-        f // TODO && VEP='si'
+        "SELECT contacto FROM clients WHERE vep='si' && cuit=?",
+        f
       );
       number.forEach(async (row) => {
         let { contacto } = row;
